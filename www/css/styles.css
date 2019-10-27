@@ -1,0 +1,137 @@
+svg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+div#controls {
+	text-align: center;
+}
+
+div.kanji {
+	margin-top: 1vh;
+}
+
+div.theater {
+	height: 50vh;
+	width: 50vh;
+	margin:auto;
+	text-align: center;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	background-image: url("../svg/jesso.svg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	max-width: 90vw;
+}
+
+div#controlunit {
+	margin-top: 5vh;
+	text-align: center;
+}
+
+div.theater span, svg {
+	padding: 10%;
+}
+
+input {
+	margin-left: 2%;
+	outline: none;
+	border: none;
+	font-size: 4vh;
+	padding-left: 1%;
+	padding-right: 1%;
+	color: maroon;
+	text-align: center;
+	max-width: 80vw;
+}
+
+div#controls {
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: center;
+	border: 1px solid maroon;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5vh;
+	padding: 1%;
+	max-width: 90vw;
+}
+
+::-webkit-input-placeholder {
+  font-size: 3vh;
+  padding-left: 1.5%;
+  color: rgb(128, 0, 0, 0.3);
+
+}
+::-moz-placeholder {
+  font-size: 3vh;
+  padding-left: 1.5%;
+  color: rgb(128, 0, 0, 0.3)
+}
+
+img.audiostatus {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 20vh;
+	max-height: 20vh;
+}
+
+img.audiostatus.off {
+	opacity: 0.6;
+}
+
+img.audiostatus.on {
+	visibility: hidden;
+}
+
+div.theater img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.swal2-actions button {
+	background: none !important;
+	color: black !important;
+	border: 2px solid maroon !important;
+	border-radius: 5px !important;
+}
+
+button {
+  border: 0;
+  border-radius: 1rem;
+  background: white;
+  color: maroon;
+  font-family: system-ui, sans-serif;
+  font-size: 4vh;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:active {
+	border: none;
+	outline: none;
+}
+
+button:focus {
+	border: none;
+	outline: none;
+}

@@ -1,0 +1,15 @@
+bin/
+data/
+wav_factory/
+svg_factory/
+share/
+lib/
+api/__pycache__/
+__pycache__/
+include/
+conf/
+notes/
+*.rdb
+*.pyc
+.env
+
