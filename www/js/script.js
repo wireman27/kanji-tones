@@ -24,6 +24,7 @@ var input = document.querySelector('.input');
 var svgContainer = document.querySelector('.theater');
 var awakeSvg = document.querySelector('img.audiostatus.on')
 var asleepSvg = document.querySelector('img.audiostatus.off')
+var controls = document.querySelector('#controls')
 
 var paths;
 var nextPath;
@@ -124,7 +125,14 @@ function animateKanji(paths) {
 	drawPath(paths[0])
 }
 
+function setPositioning() {
+	var w1 = play.getBoundingClientRect().width;
+	var w2 = window.getComputedStyle(controls, null).getPropertyValue('padding-right')
+	input.style.textIndent = (w1+parseFloat(w2))/2 + 'px';
+}
+
 audioCtx.suspend();
+setPositioning();
 
 document.onkeyup = function(event) {
 	if (event.keyCode === 13) {
@@ -138,13 +146,14 @@ play.onclick = function() {
 	var kanji = input.value
 	if (validateKanji(kanji) === false) {
 		return
-	} 
+	}
 
 	play.style.opacity = 0.5
 	play.setAttribute("disabled","disabled")
 	svgContainer.innerHTML = '<img width="100" height="160" src='+URL_LOADING_GIF+'></img>'
 
 	Promise.all([asyncWav(kanji),asyncKvgSvg(kanji)]).then(function(values) {
+		audioCtx.resume();
 		svgContainer.innerHTML = values[1];
 		svg = document.querySelector("svg");
 		svg.style.width = KVG_WIDTH;
@@ -153,7 +162,6 @@ play.onclick = function() {
 		paths = document.querySelectorAll("svg path");
 		animateKanji(paths)
 		source.start(0);
-		audioCtx.resume()
 	}, function(values) {
 		svgContainer.innerHTML = '';
 		play.removeAttribute("disabled");
