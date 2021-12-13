@@ -4,7 +4,7 @@ chardet==3.0.4
 falcon==2.0.0
 gunicorn==19.9.0
 idna==2.8
-lxml==4.4.1
+lxml==4.6.5
 numpy==1.17.2
 pyparsing==2.4.2
 python-dotenv==0.10.3
